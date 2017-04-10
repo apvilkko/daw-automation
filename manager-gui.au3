@@ -1,6 +1,6 @@
 #include <MsgBoxConstants.au3>
 #include <GUIConstantsEx.au3>
-#include "console.au3"
+#include "utils/console.au3"
 
 Opt("GUIOnEventMode", 1) ; Change to OnEvent mode
 Global $hConsole = 0
@@ -12,7 +12,7 @@ Func _RunAU3($sFilePath, $sWorkingDir = "", $iShowFlag = @SW_SHOW, $iOptFlag = 0
 EndFunc
 
 Func Run1()
-  _RunAU3(@ScriptDir&"/script1.au3")
+  _RunAU3(@ScriptDir&"/scripts/script1.au3")
 EndFunc
 
 Func RestartScript()
