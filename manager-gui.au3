@@ -36,12 +36,15 @@ Func _Main()
   $hConsole = CreateConsole()
   _Log("hello!")
 
-  Local $hGUI = GUICreate("DAW Automation Manager", 210, 80)
+  Local $hGUI = GUICreate("DAW Automation Manager", 170, 180)
 
   ;GUICtrlCreateLabel("Please click a button!", 10, 10)
-  $idRestart = GUICtrlCreateButton("Restart", 10, 50, 50, 20)
-  $idScript1 = GUICtrlCreateButton("script1", 70, 50, 50, 20)
-  $idExit = GUICtrlCreateButton("Exit", 150, 50, 50, 20)
+  Local $y = 20
+  $idRestart = GUICtrlCreateButton("Restart", 10, $y, 60, 20)
+  $y += 25
+  $idScript1 = GUICtrlCreateButton("House beat", 10, $y, 60, 20)
+  $y += 40
+  $idExit = GUICtrlCreateButton("Exit", 10, $y, 60, 20)
 
   GUICtrlSetOnEvent($idRestart, "RestartScript")
   GUICtrlSetOnEvent($idScript1, "Run1")

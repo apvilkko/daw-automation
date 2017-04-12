@@ -24,7 +24,7 @@ Func ReadVsts()
 
   StdioClose($iPID)
 
-  Local $aArray = StringSplit(StringTrimRight(StringStripCR($sOutput), StringLen(@CRLF)), @CRLF)
+  Local $aArray = StringSplit(StringStripCR($sOutput), @CRLF)
   _ArrayTrim($aArray, StringLen($VSTPLUGINS_DIR) + 1)
   _ArrayTrim($aArray, 4, 1) ; trim extension
   _ArraySort($aArray)
@@ -34,7 +34,7 @@ Func ReadVsts()
   Local $sCurrentFolder = ''
   Local $sParent = ''
   For $i = 0 to Ubound($aArray)-1
-    If Not StringRegExp($aArray[$i], "(x64|VST64|DXi)") And StringLen($aArray[$i]) > 3 Then
+    If Not StringRegExp($aArray[$i], "(x64|VST64|DXi|iZOzone4)") And StringLen($aArray[$i]) > 2 Then
       Local $aMatch = StringRegExp($aArray[$i], "(.*)\\(.*)", 1)
       If @error Then
         $sTmp &= $aArray[$i] & Chr(0)
